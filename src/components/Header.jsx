@@ -5,8 +5,9 @@ import logo from "../../assets/logo.webp";
 
 export const Header = ({ isScrolled, activeSection, isMenuOpen, setIsMenuOpen, openBooking }) => {
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center border-b ${isScrolled ? "bg-darker/80 backdrop-blur-xl border-white/5 py-3 md:py-4 shadow-xl" : "bg-transparent border-transparent py-5 md:py-6"}`}>
-      <div className="w-full max-w-7xl flex justify-between items-center px-4 md:px-6 relative z-50">
+    <>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center border-b ${isScrolled ? "bg-darker/80 backdrop-blur-xl border-white/5 py-3 md:py-4 shadow-xl" : "bg-transparent border-transparent py-5 md:py-6"}`}>
+        <div className="w-full max-w-7xl flex justify-between items-center px-4 md:px-6 relative z-50">
         <div 
           className="relative flex items-center h-8 md:h-10 cursor-pointer w-32 md:w-40" 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -63,7 +64,8 @@ export const Header = ({ isScrolled, activeSection, isMenuOpen, setIsMenuOpen, o
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </div>
+        </div>
+      </header>
 
       {/* Full Screen Mobile Menu Overlay */}
       <AnimatePresence>
@@ -143,6 +145,6 @@ export const Header = ({ isScrolled, activeSection, isMenuOpen, setIsMenuOpen, o
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 };
