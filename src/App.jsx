@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Toaster } from "sonner";
 import Lenis from 'lenis';
@@ -27,11 +27,15 @@ export default function App() {
     setIsBookingOpen(true);
   };
 
+  const lenisRef = useRef(null);
+
   useEffect(() => {
     if (isMenuOpen || selectedProject || isBookingOpen) {
       document.body.style.overflow = 'hidden';
+      if (lenisRef.current) lenisRef.current.stop();
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
+      if (lenisRef.current) lenisRef.current.start();
     }
   }, [isMenuOpen, selectedProject, isBookingOpen]);
 
@@ -77,6 +81,7 @@ export default function App() {
       smoothTouch: false,
       touchMultiplier: 2,
     });
+    lenisRef.current = lenis;
 
     let rafId;
     function raf(time) {
