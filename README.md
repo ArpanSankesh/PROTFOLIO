@@ -1,84 +1,67 @@
-# Arpan Sankesh - Portfolio Website
+# PROTFOLIO (Arpan Sankesh Portfolio)
 
-Welcome to the Arpan Sankesh Portfolio website! This project is a modern, high-converting personal portfolio designed to showcase projects, services, and clear calls to action (booking calls).
+> A modern, ultra-high-converting personal portfolio and interactive web design case-study built for Arpan Sankesh.
+
+This project is a premium, kinetic, and minimal web application designed to act as a conversion funnel for a professional web designer & developer. Instead of a standard gallery, this portfolio is engineered for high trust, authority, and booking conversions.
+
+## ✨ Features
+- **Dynamic Animations**: Powered by `framer-motion` for fluid scroll, layout changes, and interactive micro-animations.
+- **Responsive Layout**: Pixel-perfect cross-device rendering using Tailwind CSS.
+- **Conversion Focused**: Integrated booking modals (Calendly), direct CTA prompts, and persuasive copywriting structures.
+- **Modular Data System**: Easily swap out projects, testimonials, and services by editing `src/data.js` without touching the component code.
+- **Custom Hardware Accelerations**: Custom blob cursor, smooth scroll setups, and performance-optimized CSS.
 
 ## 🚀 Tech Stack
-
 - **Framework:** React + Vite
-- **Language:** JavaScript (JSX)
-- **Styling:** Tailwind CSS + Custom CSS (`src/index.css`)
-- **Animations:** Framer Motion (for dynamic scroll, custom cursor, and layout animations)
+- **Styling:** Tailwind CSS + Vanilla CSS (`src/index.css`)
+- **Animations:** Framer Motion
 - **Icons:** Lucide React
+- **Hosting:** Ready for Vercel / Netlify
 
-## 📁 Code Structure
+## 📁 Project Structure
+The repository is systematically organized for maintainability:
+- `/src/components/`: Contains modular React components (`Hero.jsx`, `ProcessSection.jsx`, `Footer.jsx`, etc.)
+- `/src/data.js`: The central data hub containing the mock-database for projects, services, and configuration.
+- `/src/App.jsx`: The root orchestrator managing routing logic and states.
+- `/src/index.css`: Tailwind directives and custom animation tokens.
 
-The project has been carefully modularized to keep the codebase clean, legible, and easy to maintain.
+## 💻 Quick Start
 
-```text
-├── assets/
-│   └── logo.webp                  # Global logo/avatar image
-├── public/                        # Publicly accessible assets
-├── src/
-│   ├── components/                # Modular React components
-│   │   ├── BookingModal.jsx       # Google Calendar iframe modal
-│   │   ├── CustomCursor.jsx       # Custom blob cursor that follows the mouse
-│   │   ├── Footer.jsx             # Contact information and links footer
-│   │   ├── Header.jsx             # Top navigation and mobile menu
-│   │   ├── Hero.jsx               # Main banner section (Hero)
-│   │   ├── ProcessSection.jsx     # "My Process" breakdown  
-│   │   ├── ProjectDetail.jsx      # Full-screen expanded project case study modal
-│   │   ├── ScrollProgress.jsx     # Top progress bar reading scroll distance
-│   │   ├── ServicesSection.jsx    # Display of service offerings
-│   │   ├── TestimonialsSection.jsx# Testimonials display layout
-│   │   └── WorkSection.jsx        # Project grid section
-│   ├── data.js                    # Contains all the mapped arrays (projects, services, testimonials, etc)
-│   ├── App.jsx                    # Root container orchestrating states and components
-│   ├── index.css                  # Core CSS and Tailwind directives
-│   └── main.jsx                   # React entry-point
-├── index.html                     # HTML Entry point
-├── package.json                   # Dependencies & scripts
-└── vite.config.js                 # Vite compiler configuration
-```
+### Prerequisites
+Make sure you have Node.js installed.
 
-## 🧠 How it Works
+### Installation
+1. Clone the repository
+   ```bash
+   git clone https://github.com/ArpanSankesh/PROTFOLIO.git
+   ```
+2. Navigate into the project directory
+   ```bash
+   cd PROTFOLIO
+   ```
+3. Install dependencies
+   ```bash
+   npm install
+   ```
 
-### 1. Data Driven
-All of the content (projects, services, process steps, testimonials) lives in `src/data.js`. If you want to add a new project or change a service price, you simply update the arrays in `src/data.js` and the UI will automatically update. No need to touch the layout code!
-
-### 2. State Management (`App.jsx`)
-The `App.jsx` file is the "brain" of the layout. It holds the states for:
-- `isScrolled`: Checks if you have scrolled past the top to give the `Header` a solid backdrop.
-- `activeSection`: Uses `IntersectionObserver` to highlight the current section in your `Header`.
-- `selectedProject`: Controls whether the `ProjectDetail` modal is open or closed when you click a project in the `WorkSection`.
-- `isBookingOpen`: Controls whether the Google Calendar `BookingModal` is open or closed.
-
-These state modifiers are passed securely down as `props` to individual components.
-
-### 3. Animations
-This project heavily uses `framer-motion` for fluid animations.
-- The `CustomCursor` takes `clientX`/`clientY` mapping from mouse events to drive a custom spring-animated blob.
-- `AnimatePresence` is used around `BookingModal` and `ProjectDetail` to gently animate them in and out of the screen.
-
-## 🚀 Running & Building
-
-**Development Mode:**
+### Running Locally
+To spin up the development server:
 ```bash
 npm run dev
 ```
 
-**Production Build (For Vercel):**
+### Production Build
+To create a production-ready optimized build:
 ```bash
 npm run build
 ```
-The build command creates an optimized, minified bundle in the `/dist` directory. 
 
-## 🌐 Deploying to Vercel
+## 📬 Contact & Socials
+- **Email**: arpansankesh830@gmail.com
+- **Phone**: (+91) 8305343679
+- **GitHub**: [ArpanSankesh](https://github.com/ArpanSankesh)
+- **LinkedIn**: [in/arpan-sankesh](https://www.linkedin.com/in/arpan-sankesh/)
+- **Instagram**: [buildwith.arpan](https://www.instagram.com/buildwith.arpan/)
 
-Since this is a standard Vite application, deploying it to Vercel is extremely straightforward:
-1. Connect this repository to your Vercel account.
-2. Ensure the Framework Preset is set to **Vite**.
-3. **Build Command:** `npm run build`
-4. **Output Directory:** `dist`
-5. Click **Deploy**! 
-
-Everything will compile perfectly on Vercel's end thanks to the included package.json scripts.
+---
+*Designed & Developed by Arpan Sankesh*
